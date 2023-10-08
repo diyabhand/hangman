@@ -2,12 +2,13 @@ import random
 
 class Hangman:
     def __init__(self, word_list, num_lives=5):
+        # Initialize Hangman attributes
         self.word_list = word_list
-        self.word = random.choice(word_list)
-        self.word_guessed = ['_' for _ in self.word]
+        self.word = random.choice(word_list) # Word to be guessed
+        self.word_guessed = ['_' for _ in self.word] # List of guessed letters and underscores
         self.num_letters = len(set(self.word))
         self.num_lives = num_lives
-        self.list_of_guesses = []
+        self.list_of_guesses = [] # List of guessed letters
 
     def check_guess(self, guess):
         guess = guess.lower()  # Convert guess to lowercase
